@@ -1,0 +1,46 @@
+.blockInfo
+{
+
+	@include blockPadding;
+
+	text-align: center;
+	@media (max-width: $media-tablet)
+	{
+		display: none;
+	}
+
+	&__text
+	{
+		margin-bottom: $rem * 25;
+	}
+	&__list
+	{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: $rem * 30;
+	}
+	&__listItem
+	{
+		overflow: hidden;
+		border-radius: $rem * 8;
+		background-color: $clr-main;
+	}
+	&__listItemImg
+	{
+		display: block;
+		width: 100%;
+	}
+	&__listItemText
+	{
+		position: relative;
+		z-index: 1;
+		margin-top: $rem * -5;
+		padding: $rem * 15 ;
+		box-sizing: border-box;
+		text-align: center;
+		background-color: $clr-main;
+		color: $clr-white;
+
+	}
+
+}

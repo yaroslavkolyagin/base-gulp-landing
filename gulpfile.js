@@ -6,6 +6,7 @@ const
 	rename = require("gulp-rename");
 	pug = require('gulp-pug');
 	less = require('gulp-less');
+	sass = require('gulp-sass')(require('sass'));
 	autoprefixer = require('gulp-autoprefixer');
 	csso = require('gulp-csso');
 	csscomb = require('gulp-csscomb');
@@ -18,8 +19,8 @@ function watch() {
 		server: { baseDir: "dist/" },
 		// tunnel: true
 	});
-	gulp.watch('src/layout/**/*.pug', layout);
-	gulp.watch('src/styles/**/*.less', styles);
+	gulp.watch('src/**/*.pug', layout);
+	gulp.watch('src/styles/**/*.scss', styles);
 	gulp.watch('src/scripts/**/*.js', scripts);
 	gulp.watch('src/fonts/**/*', fonts);
 	gulp.watch('src/img/**/*', img);
@@ -36,10 +37,14 @@ function layout() {
 }
 function styles() {
 	return gulp.src([
-		'./node_modules/normalize.less/normalize.less',
-		'./src/styles/main.less'
+		// './node_modules/normalize.less/normalize.less',
+		// './src/styles/main.less',
+		'./node_modules/normalize-scss/sass/_normalize.scss',
+		'./src/styles/main.scss',
 	])
-		.pipe(less())
+		// .pipe(less())
+		.pipe(sass().on('error', sass.logError))
+		.pipe(gulp.dest('./css'))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 2 versions'],
 			cascade: false
@@ -54,7 +59,7 @@ function styles() {
 }
 function scripts() {
 	return gulp.src([
-		'./node_modules/jquery/dist/jquery.js',
+		// './node_modules/jquery/dist/jquery.js',
 		'./src/scripts/main.js'
 	])
 		.pipe(concat('bundle.js'))

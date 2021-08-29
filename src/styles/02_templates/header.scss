@@ -1,0 +1,13 @@
+.header
+{
+	padding: $rem * 20 $rem * 15;
+	box-sizing: border-box;
+	border-bottom: $rem * 1 solid #E0E0E0;
+	opacity: 0.98;
+	&__logo
+	{
+		display: block;
+		width: $rem * 160;
+		margin: 0 auto;
+	}
+}

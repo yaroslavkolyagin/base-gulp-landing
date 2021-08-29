@@ -1,0 +1,72 @@
+.footer
+{
+	padding: $rem * 25 0;
+	background-color: $clr-main;
+	.container
+	{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: $media-tablet)
+		{
+			flex-flow: column;
+		}
+	}
+	&__logo
+	{
+		display: block;
+		width: $rem * 160;
+		margin-right: $rem * 30;
+		@media (max-width: $media-tablet)
+		{
+			margin-right: 0;
+			margin-bottom: $rem * 25;
+		}
+	}
+	&__navList
+	{
+		display: flex;
+		align-items: center;
+		@media (max-width: $media-tablet)
+		{
+			flex-flow: column;
+			margin-bottom: $rem * 25;
+		}
+	}
+	&__navListItem
+	{
+		margin-right: $rem * 30;
+		@media (max-width: $media-tablet)
+		{
+			margin-right: 0;
+			margin-bottom: $rem * 15;
+			&:last-child
+			{
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__navListItemLink
+	{
+		font-size: $rem * 14;
+		color: $clr-white;
+		text-decoration: underline;
+		&:hover
+		{
+			text-decoration: none;
+		}
+	}
+	&__copyright
+	{
+		font-size: $rem * 12;
+		line-height: $rem * 18;
+		color: $clr-white;
+		@media (max-width: $media-tablet)
+		{
+			br
+			{
+				display: none;
+			}
+		}
+	}
+}

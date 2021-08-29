@@ -1,0 +1,51 @@
+.blockQuestions
+{
+
+	@include blockPadding;
+
+	background-color: $clr-sub;
+
+	&__item
+	{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: $rem * 30;
+		align-items: center;
+		margin-bottom: $rem * 40;
+		&:nth-child(even)
+		{
+			.blockQuestions__itemMain
+			{
+				order: 2;
+				@media (max-width: $media-tablet)
+				{
+					order: 1;
+				}
+			}
+			.blockQuestions__itemPicture
+			{
+				order: 1;
+				@media (max-width: $media-tablet)
+				{
+					order: 2;
+				}
+			}
+		}
+		&:last-child
+		{
+			margin-bottom: 0;
+		}
+		@media (max-width: $media-tablet)
+		{
+			grid-template-columns: 1fr;
+			grid-gap: $rem * 20;
+			margin-bottom: $rem * 30;
+		}
+	}
+	&__itemPictureImg
+	{
+		display: block;
+		width: 100%;
+	}
+
+}

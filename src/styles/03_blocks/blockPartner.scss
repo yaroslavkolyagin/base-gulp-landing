@@ -1,0 +1,35 @@
+.blockPartner
+{
+
+	@include blockPadding;
+
+	position: relative;
+	background-color: $clr-sub;
+
+	&__logo
+	{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 100%;
+		max-width: $rem * 260;
+		@media (max-width: $media-tablet)
+		{
+			position: static;
+			display: block;
+			margin: 0 auto $rem * 20;
+		}
+	}
+	&__main
+	{
+		padding-left: $rem * 290;
+		box-sizing: border-box;
+		@media (max-width: $media-tablet)
+		{
+			padding-left: 0;
+			text-align: center;
+		}
+	}
+
+}

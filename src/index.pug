@@ -8,6 +8,13 @@ html
 		title Лендинг
 		link(rel="stylesheet", href="css/bundle.min.css")
 
-	body.template-base
+	body
+		include views/template/header
+		include views/blocks/blockBenifits
+		include views/blocks/blockQuestions
+		include views/blocks/blockInfo
+		include views/blocks/blockPartner
+		include views/blocks/blockNote
+		include views/template/footer
 
 		script(src="js/bundle.min.js")

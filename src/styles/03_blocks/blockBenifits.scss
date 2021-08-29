@@ -1,0 +1,58 @@
+.blockBenifits
+{
+
+	@include blockPadding;
+
+	&__list
+	{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: $rem * 20;
+		@media (max-width: $media-tablet)
+		{
+			grid-template-columns: 1fr 1fr;
+			grid-gap: $rem * 8;
+		}
+	}
+	&__listItem
+	{
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		padding: $rem * 30 $rem * 18;
+		box-sizing: border-box;
+		background-color: $clr-sub;
+		@media (max-width: $media-tablet)
+		{
+			padding: $rem * 20 $rem * 16;
+			border-radius: $rem * 8;
+			&:nth-child(2)
+			{
+				order: 3;
+			}
+			&:nth-child(4)
+			{
+				order: 4;
+			}
+		}
+	}
+	&__listItemIcon
+	{
+		display: block;
+		max-width: $rem * 70;
+		max-height: $rem * 60;
+		margin: 0 auto $rem * 20;
+	}
+	&__listItemText
+	{
+		font-size: $rem * 21;
+		line-height: $rem * 27;
+		text-align: center;
+		@media (max-width: $media-tablet)
+		{
+			font-size: $rem * 16;
+			line-height: $rem * 20;
+		}
+	}
+
+}

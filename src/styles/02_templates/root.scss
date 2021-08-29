@@ -1,0 +1,13 @@
+html
+{
+	font-family: $font-main;
+	font-weight: $font-main-weight--medium;
+	font-size: $font-size-base;
+}
+.container
+{
+	max-width: $rem * 1100;
+	margin: 0 auto;
+	padding-right: $rem * 15;
+	padding-left: $rem * 15;
+}

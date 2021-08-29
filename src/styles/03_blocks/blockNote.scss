@@ -1,0 +1,10 @@
+.blockNote
+{
+	@include blockPadding;
+
+	text-align: center;
+	@media (max-width: $media-tablet)
+	{
+		text-align: left;
+	}
+}
